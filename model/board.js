@@ -13,27 +13,45 @@ export class Board {
         this.size = size;
     }
 
+    shuffle(n, cap) {
+        let moves = 0, total = 0;
+        for (; moves < n && total < cap; total++) {
+            if (([
+                this.up.bind(this),
+                this.down.bind(this),
+                this.left.bind(this),
+                this.right.bind(this),
+            ][Math.floor(4 * Math.random())])()) {
+                moves++;
+            }
+        }
+    }
+
     up() {
         if (this.empty.row != this.size - 1) {
             this.moveEmpty({ rows: 1, cols: 0 });
+            return true;
         }
     }
 
     down() {
         if (this.empty.row != 0) {
             this.moveEmpty({ rows: -1, cols: 0 });
+            return true;
         }
     }
 
     left() {
         if (this.empty.col != this.size - 1) {
             this.moveEmpty({ rows: 0, cols: 1 });
+            return true;
         }
     }
 
     right() {
         if (this.empty.col != 0) {
             this.moveEmpty({ rows: 0, cols: -1 });
+            return true;
         }
     }
 
