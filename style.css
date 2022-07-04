@@ -9,6 +9,7 @@ body {
     height: 100vh;
     display: grid;
     place-items: center;
+    grid-template-rows: 1fr 1fr;
     background: #181818;
     font-family: system-ui;
 }
