@@ -10,6 +10,20 @@ body {
     display: grid;
     place-items: center;
     background: #181818;
+    font-family: system-ui;
+}
+
+div.size {
+    font-size: 1.25rem;
+}
+
+div.size input {
+    width: 3rem;
+    font-size: inherit;
+    background: #363636;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
 }
 
 table {
