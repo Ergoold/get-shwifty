@@ -7,6 +7,7 @@ export function renderBoard(board) {
             let td = document.createElement('td');
             if (!cell.isEmpty) {
                 td.innerHTML = cell.number;
+                td.classList.add('not-empty');
             }
             tr.appendChild(td);
         }
