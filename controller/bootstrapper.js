@@ -1,5 +1,6 @@
 import { Board } from '../model/board.js'
 import { renderBoard } from '../view/board.js'
+import { setKeyDownHandler } from '../view/event-handler.js'
 
 export function initialize() {
     let size = 3;
@@ -14,12 +15,5 @@ export function initialize() {
         ArrowLeft: board.left.bind(board),
         ArrowRight: board.right.bind(board),
     };
-
-    document.onkeydown = (event) => {
-        let action = keyToAction[event.key];
-        if (action) {
-            action();
-            renderBoard(board);
-        }
-    }
+    setKeyDownHandler(keyToAction, () => renderBoard(board));
 }
